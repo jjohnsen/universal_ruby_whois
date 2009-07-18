@@ -196,6 +196,7 @@ Whois::Server.define(
   :preserved => /Not available for second level registration./im,
   :free => /No match./im
 )
+
 # Whois::Server.define(
 #   'net',
 #   'whois.verisign-grs.com',
@@ -287,3 +288,12 @@ Whois::Server.define(
   :free => /NO MATCH.*/,
   :registered => /Domain Name/
 )
+
+Whois::Server.define(
+  'no',
+  'whois.norid.no',
+  :registered => /Domain Information/im,
+  :free => /% no matches/im,
+  :creation_date => /(Created:)\s*([\w\-]+)[^\n\r]*[\n\r]/im
+)
+
